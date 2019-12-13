@@ -1,0 +1,22 @@
+doctype html  
+html(lang='en')  
+ head
+   title Users Management System
+   link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+ body
+ h1 Create New User
+ form(method='POST' action='/createUser')
+          div.form-group
+            label(for='name') Full Name:
+            input#name.form-control(type='text', placeholder='e.g. John Smith' name='fullName', required)
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='e.g. js@email.com' name='email',required)
+          div.form-group
+            label(for='dob') Date of Birth:
+            input#dob.form-control(type='date', name='DoB',required)
+          button.btn.btn-primary(type='submit') Register User  
+
+          button.btn.btn-secondary(type='reset' style="margin-left:10px; margin-right:10px;") Reset
+          
+          a(href="/") Back to all users

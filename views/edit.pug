@@ -1,0 +1,21 @@
+doctype html  
+html(lang='en')  
+ head
+   title Users Management System
+   link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+ body
+ h1= users.fullName + " Profile"
+ form(method='POST', action='/updateUser/'+users._id)
+          div.form-group
+            label(for='name') Full Name:
+            input#name.form-control(type='text', placeholder='e.g. John Smith' name='fullName', required value=users.fullName)
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='e.g. js@email.com' name='email',required value=users.email)
+          div.form-group
+            label(for='dob') Date of Birth:
+            input#dob.form-control(type='date', name='DoB',required, value=users.DoB)
+          button.btn.btn-primary(type='submit') Update Details  
+
+          button.btn.btn-secondary(type='reset' style="margin-left:10px; margin-right:10px;") Reset
+          a(href="/") Back to all users

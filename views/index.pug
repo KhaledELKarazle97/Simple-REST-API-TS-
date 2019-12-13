@@ -1,0 +1,36 @@
+doctype html  
+html(lang='en')  
+ head
+   title Users Management System
+   link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+ body
+    .container-fluid
+        .row
+            .col-md-12
+                h1 Users Management System
+                a(href = "/new") Add New User
+                table.table
+                    tr
+                        th ID
+                        th Email
+                        th Full Name
+                        th Date of Birth
+                        th Creation Date
+                        th Modification Date
+                        th Actions
+                    each u in users
+                        tr
+                            td= u._id
+                            td= u.email
+                            td= u.fullName
+                            td= u.DoB
+                            td= u.created_date
+                            td= u.date_modified
+                            td(colspan="2")
+                                input.btn.btn-danger(id= u._id, type='button', value='Delete' onclick="deleteUser('" + u._id + "')")  
+                                a(href="/edit/"+u._id)
+                                    input.btn.btn-primary(id= u._id, type='button', value='Edit' onclick="getUserDetails('" + u._id + "')")  
+                                
+                                
+script(src="https://code.jquery.com/jquery-3.4.1.js")
+script(src="../static/script.js")
