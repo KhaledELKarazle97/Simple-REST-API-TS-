@@ -19,6 +19,6 @@
     "express-validator": "^6.5.0",
     "mongoose": "^5.13.9",
     "nodemon": "^2.0.3",
-    "pug": "^3.0.1"
+    "pug": "^3.0.2"
   }
 }
